@@ -30,11 +30,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    if @task.update(task_params)
-      redirect_to tasks_path, notice: 'Task was successfully updated.'
-    else
-      render :edit
-    end
+    redirect_to tasks_path, notice: 'Task was successfully destroyed.'
   end
 
   private
